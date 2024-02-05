@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import Router from "./screens/Router";
+import {Outlet} from "react-router-dom";
+import Header from "./components/Header";
 
 function App() {
     const [value, setValue] = useState("");
@@ -9,21 +10,13 @@ function App() {
         } = event;
         setValue(value);
     };
-    const onSubmit = (event:React.FormEvent<HTMLFormElement>) => {
+    const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         console.log("hello", value);
     };
     return (
         <div>
-            <Router/>
-            <form onSubmit={onSubmit}>
-                <input
-                    value={value}
-                    onChange={onChange}
-                    type="text"
-                    placeholder="username"/>
-                <button>Log in</button>
-            </form>
+            <Outlet/>
         </div>
     );
 }
