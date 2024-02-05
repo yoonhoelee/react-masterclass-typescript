@@ -2,6 +2,7 @@ import {createBrowserRouter} from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import App from "../App";
+import NotFound from "./NotFound";
 
 const router = createBrowserRouter([{
     path: "/",
@@ -16,5 +17,6 @@ const router = createBrowserRouter([{
             element: <About/>
         },
     ],
+    errorElement:<NotFound/>,
 }])
 export default router;
