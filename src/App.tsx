@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Router from "./screens/Router";
 
 function App() {
     const [value, setValue] = useState("");
@@ -14,6 +15,7 @@ function App() {
     };
     return (
         <div>
+            <Router/>
             <form onSubmit={onSubmit}>
                 <input
                     value={value}
